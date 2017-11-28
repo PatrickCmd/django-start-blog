@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Django start Blog</title>
-</head>
-<body>
-    
-    <div>
-        <h1><a href="/">Django Start Blog</a></h1>
-    </div>
+{% extends "blog/base.html" %}
 
+ {% block content %}
     {% for post in posts %}
-        <div>
+        <div class="post">
             <p>Published: {{ post.published_date }}</p>
             <h2><a href="">{{ post.title }}</a></h2>
             <p>
@@ -21,6 +10,4 @@
             </p><hr />
         </div>
     {% endfor %}
-
-</body>
-</html>
+ {% endblock content %}
